@@ -9,7 +9,7 @@ internal static class ActiveSessionDTOExtensions
     {
         if (dto == null)
         {
-            return null;
+            return null!;
         }
 
         return new ActiveSession
