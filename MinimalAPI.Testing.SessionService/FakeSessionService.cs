@@ -1,5 +1,5 @@
-﻿using MinimalAPI.Testing.SessionService.DTOs;
-using MinimalAPI.Testing.SessionService.Models;
+﻿using MinimalAPI.Testing.SessionService.Models;
+using MinimalAPI.Testing.SessionService.Requests;
 
 namespace MinimalAPI.Testing.SessionService;
 
@@ -9,14 +9,14 @@ public class FakeSessionService : ISessionService
     public static readonly DateTime SessionEndDate = SessionStartDate.AddDays(1);
     public static readonly string AccessDeviceValue = "1ABC123";
 
-    public Task<ActiveSessionDTO> StartSession(StartSessionModel model)
+    public Task<ActiveSession> StartSession(StartSessionRequest model)
     {
         throw new NotImplementedException();
     }
 
-    public Task<HistorySessionDTO> StopSession(StopSessionModel model)
+    public Task<HistorySession?> StopSession(StopSessionRequest model)
     {
-        var historySession = new HistorySessionDTO
+        var historySession = new HistorySession
         {
             AccessDeviceValue = AccessDeviceValue,
             SessionId = model.SessionId,
@@ -24,6 +24,6 @@ public class FakeSessionService : ISessionService
             EndDate = SessionEndDate,
         };
 
-        return Task.FromResult(historySession);
+        return Task.FromResult(historySession)!;
     }
 }

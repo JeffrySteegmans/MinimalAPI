@@ -1,5 +1,5 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using MinimalAPI.Testing.API.APIs;
+using MinimalAPI.Testing.API.EndPoints;
 using MinimalAPI.Testing.SessionService;
 
 var builder = WebApplication.CreateBuilder(args);

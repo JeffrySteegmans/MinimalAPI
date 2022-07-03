@@ -1,4 +1,4 @@
-﻿using MinimalAPI.Testing.API.APIs.Models;
+﻿using MinimalAPI.Testing.API.EndPoints.Models;
 using MinimalAPI.Testing.API.Tests.Fixtures;
 using MinimalAPI.Testing.SessionService;
 using Newtonsoft.Json;

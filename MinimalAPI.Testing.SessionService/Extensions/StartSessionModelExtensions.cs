@@ -1,15 +1,20 @@
-﻿using MinimalAPI.Testing.SessionService.DTOs;
-using MinimalAPI.Testing.SessionService.Models;
+﻿using MinimalAPI.Testing.SessionService.Models;
+using MinimalAPI.Testing.SessionService.Requests;
 
 namespace MinimalAPI.Testing.SessionService.Extensions;
 
 internal static class StartSessionModelExtensions
 {
-    internal static HistorySessionDTO ToHistorySessionDTO(this StartSessionModel model, Guid sessionId)
+    internal static HistorySession? ToHistorySession(this StartSessionRequest request, Guid sessionId)
     {
-        var (startDate, accessDeviceValue) = model;
+        if (request is null)
+        {
+            return null!;
+        }
 
-        return new HistorySessionDTO
+        var (startDate, accessDeviceValue) = request;
+
+        return new HistorySession
         {
             AccessDeviceValue = accessDeviceValue,
             StartDate = startDate,
@@ -17,11 +22,16 @@ internal static class StartSessionModelExtensions
         };
     }
 
-    internal static ActiveSessionDTO ToActiveSessionDTO(this StartSessionModel model, Guid sessionId)
+    internal static ActiveSession? ToActiveSession(this StartSessionRequest request, Guid sessionId)
     {
-        var (startDate, accessDeviceValue) = model;
+        if (request is null)
+        {
+            return null!;
+        }
 
-        return new ActiveSessionDTO
+        var (startDate, accessDeviceValue) = request;
+
+        return new ActiveSession
         {
             AccessDeviceValue = accessDeviceValue,
             StartDate = startDate,
