@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using MinimalAPI.Testing.API.EndPoints;
+using MinimalAPI.Testing.API.EndPoints.QParkMobileApp;
+using MinimalAPI.Testing.API.EndPoints.Sessions;
 using MinimalAPI.Testing.SessionService;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -10,6 +11,9 @@ var app = builder.Build();
 
 var qParkMobileAppAPIs = new QParkMobileAppAPIs();
 qParkMobileAppAPIs.Initialize(app);
+
+var sessionAPIs = new SessionsEndPoints();
+sessionAPIs.Initialize(app);
 
 app.Run();
 

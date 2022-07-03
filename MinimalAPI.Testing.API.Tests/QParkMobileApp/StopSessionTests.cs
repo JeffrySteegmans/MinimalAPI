@@ -3,7 +3,7 @@ using MinimalAPI.Testing.API.Tests.Fixtures;
 using MinimalAPI.Testing.SessionService;
 using Newtonsoft.Json;
 
-namespace MinimalAPI.Testing.API.Tests;
+namespace MinimalAPI.Testing.API.Tests.QParkMobileApp;
 
 public class StopSessionTests : IClassFixture<ApiFixture>
 {
@@ -15,7 +15,7 @@ public class StopSessionTests : IClassFixture<ApiFixture>
     }
 
     [Fact]
-    public async Task StopSession_ShouldReturnHistorySession()
+    public async Task GivenSessionExists_WhenStopSession_ThenShouldReturnHistorySession()
     {
         var sessionId = Guid.NewGuid();
         using var client = _fixture.CreateClient();

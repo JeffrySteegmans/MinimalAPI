@@ -4,7 +4,7 @@ using MinimalAPI.Testing.API.EndPoints.Requests;
 using MinimalAPI.Testing.SessionService;
 using SessionServiceRequests = MinimalAPI.Testing.SessionService.Requests;
 
-namespace MinimalAPI.Testing.API.EndPoints;
+namespace MinimalAPI.Testing.API.EndPoints.QParkMobileApp;
 
 internal class QParkMobileAppAPIs
 {
@@ -19,15 +19,20 @@ internal class QParkMobileAppAPIs
 
     private async Task<ActiveSession> StartSession(HttpContext context, ISessionService sessionService, StartSessionRequest request)
     {
-        var activeSessionDTO = await sessionService.StartSession(request.ToStartSessionRequest());
+        var activeSession = await sessionService.StartSession(request.ToStartSessionRequest());
 
-        return activeSessionDTO.ToWebApiModel();
+        return activeSession.ToWebApiModel();
     }
 
-    private async Task<HistorySession> StopSession(HttpContext context, ISessionService sessionService, Guid sessionId)
+    private async Task<HistorySession?> StopSession(HttpContext context, ISessionService sessionService, Guid sessionId)
     {
-        var historySessionDTO = await sessionService.StopSession(new SessionServiceRequests.StopSessionRequest(sessionId));
+        var historySession = await sessionService.StopSession(new SessionServiceRequests.StopSessionRequest(sessionId));
 
-        return historySessionDTO!.ToWebApiModel();
+        if (historySession is null)
+        {
+            return null!;
+        }
+
+        return historySession!.ToWebApiModel();
     }
 }
