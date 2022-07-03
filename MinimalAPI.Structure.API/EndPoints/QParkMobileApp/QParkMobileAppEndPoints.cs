@@ -28,7 +28,8 @@ internal class QParkMobileAppEndPoints
 
     private async Task<HistorySession> StopSession(HttpContext context, ISessionService sessionService, Guid sessionId)
     {
-        var historySession = await sessionService.StopSession(new SessionServiceRequests.StopSessionRequest { SessionId = sessionId });
+        var request = new SessionServiceRequests.StopSessionRequest(sessionId);
+        var historySession = await sessionService.StopSession(request);
 
         return historySession.ToWebApiModel();
     }

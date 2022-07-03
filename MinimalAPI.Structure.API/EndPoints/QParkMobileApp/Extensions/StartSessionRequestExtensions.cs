@@ -9,10 +9,6 @@ internal static class StartSessionRequestExtensions
             return null!;
         }
 
-        return new SessionService.Requests.StartSessionRequest
-        {
-            AccessDeviceValue = request.AccessDeviceValue,
-            StartDate = request.StartDate,
-        };
+        return new SessionService.Requests.StartSessionRequest(request.StartDate, request.AccessDeviceValue);
     }
 }
