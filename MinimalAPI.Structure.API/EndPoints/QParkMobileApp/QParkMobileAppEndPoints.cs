@@ -6,7 +6,7 @@ using MinimalAPI.Structure.SessionService.Models;
 
 namespace MinimalAPI.Structure.API.EndPoints.QParkMobileApp;
 
-internal class QParkMobileAppAPIs
+internal class QParkMobileAppEndPoints
 {
     private const string BASEPATH = "/mobile";
 

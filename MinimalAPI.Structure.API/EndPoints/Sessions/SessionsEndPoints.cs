@@ -1,6 +1,6 @@
 ﻿namespace MinimalAPI.Structure.API.EndPoints.Sessions;
 
-internal class SessionsAPIs
+internal class SessionsEndPoints
 {
     private const string BASEPATH = "/sessions";
 
