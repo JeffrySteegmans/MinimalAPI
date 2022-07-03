@@ -3,6 +3,7 @@
     "MinimalAPI.Structure.API": {
       "commandName": "Project",
       "launchBrowser": true,
+      "launchUrl": "mobile/hello",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       },
