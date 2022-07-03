@@ -1,6 +1,6 @@
-﻿namespace MinimalAPI.Structure.SessionService.DTOs;
+﻿namespace MinimalAPI.Structure.SessionService.Models;
 
-public class HistorySessionDTO
+public class HistorySession
 {
     public Guid SessionId { get; set; }
 

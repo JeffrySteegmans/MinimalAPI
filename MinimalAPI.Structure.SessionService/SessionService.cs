@@ -1,33 +1,33 @@
-﻿using MinimalAPI.Structure.SessionService.DTOs;
-using MinimalAPI.Structure.SessionService.Extensions;
+﻿using MinimalAPI.Structure.SessionService.Extensions;
 using MinimalAPI.Structure.SessionService.Models;
+using MinimalAPI.Structure.SessionService.Requests;
 
 namespace MinimalAPI.Structure.SessionService;
 
 public class SessionService : ISessionService
 {
-    private readonly List<HistorySessionDTO> _sessions = new List<HistorySessionDTO>();
+    private readonly List<HistorySession> _sessions = new List<HistorySession>();
 
-    public Task<ActiveSessionDTO> StartSession(StartSessionModel model)
+    public Task<ActiveSession> StartSession(StartSessionRequest model)
     {
         var sessionId = Guid.NewGuid();
 
-        _sessions.Add(model.ToHistorySessionDTO(sessionId));
+        _sessions.Add(model.ToHistorySessionDomainModel(sessionId));
 
-        return Task.FromResult(model.ToActiveSessionDTO(sessionId));
+        return Task.FromResult(model.ToActiveSessionDomainModel(sessionId));
     }
 
-    public Task<HistorySessionDTO> StopSession(StopSessionModel model)
+    public Task<HistorySession> StopSession(StopSessionRequest model)
     {
-        var historySessionDTO = _sessions.SingleOrDefault(x => x.SessionId == model.SessionId);
+        var historySession = _sessions.SingleOrDefault(x => x.SessionId == model.SessionId);
 
-        if (historySessionDTO == null)
+        if (historySession == null)
         {
-            return Task.FromResult<HistorySessionDTO>(null);
+            return Task.FromResult<HistorySession>(null);
         }
 
-        historySessionDTO.EndDate = DateTime.UtcNow;
+        historySession.EndDate = DateTime.UtcNow;
 
-        return Task.FromResult(historySessionDTO);
+        return Task.FromResult(historySession);
     }
 }

@@ -1,8 +1,8 @@
 ﻿using MinimalAPI.Structure.API.EndPoints.QParkMobileApp.Extensions;
 using MinimalAPI.Structure.API.EndPoints.QParkMobileApp.Models;
-using MinimalAPI.Structure.API.EndPoints.QParkMobileApp.Requests;
 using MinimalAPI.Structure.SessionService;
-using MinimalAPI.Structure.SessionService.Models;
+
+using SessionServiceRequests = MinimalAPI.Structure.SessionService.Requests;
 
 namespace MinimalAPI.Structure.API.EndPoints.QParkMobileApp;
 
@@ -19,17 +19,17 @@ internal class QParkMobileAppEndPoints
         app.MapPost($"{BASEPATH}/StopSession/{{sessionId}}", StopSession);
     }
 
-    private async Task<ActiveSession> StartSession(HttpContext context, ISessionService sessionService, StartSessionRequest request)
+    private async Task<ActiveSession> StartSession(HttpContext context, ISessionService sessionService, Requests.StartSessionRequest request)
     {
-        var activeSessionDTO = await sessionService.StartSession(request.ToStartSessionModel());
+        var activeSession = await sessionService.StartSession(request.ToStartSessionRequest());
 
-        return activeSessionDTO.ToWebApiModel();
+        return activeSession.ToWebApiModel();
     }
 
     private async Task<HistorySession> StopSession(HttpContext context, ISessionService sessionService, Guid sessionId)
     {
-        var historySessionDTO = await sessionService.StopSession(new StopSessionModel { SessionId = sessionId });
+        var historySession = await sessionService.StopSession(new SessionServiceRequests.StopSessionRequest { SessionId = sessionId });
 
-        return historySessionDTO.ToWebApiModel();
+        return historySession.ToWebApiModel();
     }
 }

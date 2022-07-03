@@ -1,18 +1,17 @@
 ﻿using MinimalAPI.Structure.API.EndPoints.QParkMobileApp.Models;
-using MinimalAPI.Structure.SessionService.DTOs;
 
 namespace MinimalAPI.Structure.API.EndPoints.QParkMobileApp.Extensions;
 
-internal static class ActiveSessionDTOExtensions
+internal static class ActiveSessionExtensions
 {
-    internal static ActiveSession ToWebApiModel(this ActiveSessionDTO dto)
+    internal static ActiveSession ToWebApiModel(this SessionService.Models.ActiveSession dto)
     {
         if (dto == null)
         {
-            return null;
+            return null!;
         }
 
-        return new ActiveSession
+        return new Models.ActiveSession
         {
             StartDate = dto.StartDate,
             AccessDeviceValue = dto.AccessDeviceValue,

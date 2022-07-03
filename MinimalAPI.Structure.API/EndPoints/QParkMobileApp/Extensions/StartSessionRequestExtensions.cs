@@ -1,18 +1,15 @@
-﻿using MinimalAPI.Structure.API.EndPoints.QParkMobileApp.Requests;
-using MinimalAPI.Structure.SessionService.Models;
-
-namespace MinimalAPI.Structure.API.EndPoints.QParkMobileApp.Extensions;
+﻿namespace MinimalAPI.Structure.API.EndPoints.QParkMobileApp.Extensions;
 
 internal static class StartSessionRequestExtensions
 {
-    internal static StartSessionModel ToStartSessionModel(this StartSessionRequest request)
+    internal static SessionService.Requests.StartSessionRequest ToStartSessionRequest(this Requests.StartSessionRequest request)
     {
         if (request == null)
         {
-            return null;
+            return null!;
         }
 
-        return new StartSessionModel
+        return new SessionService.Requests.StartSessionRequest
         {
             AccessDeviceValue = request.AccessDeviceValue,
             StartDate = request.StartDate,
