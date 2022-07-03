@@ -1,15 +1,18 @@
-﻿namespace MinimalAPI.Structure.API.EndPoints.QParkMobileApp.Extensions;
+﻿using MinimalAPI.Structure.API.EndPoints.QParkMobileApp.Models;
+using SessionServiceModels = MinimalAPI.Structure.SessionService.Models;
+
+namespace MinimalAPI.Structure.API.EndPoints.QParkMobileApp.Extensions;
 
 internal static class HistorySessionExtensions
 {
-    internal static Models.HistorySession ToWebApiModel(this SessionService.Models.HistorySession dto)
+    internal static HistorySession ToWebApiModel(this SessionServiceModels.HistorySession dto)
     {
         if (dto == null)
         {
             return null!;
         }
 
-        return new Models.HistorySession
+        return new HistorySession
         {
             SessionId = dto.SessionId,
             AccessDeviceValue = dto.AccessDeviceValue,

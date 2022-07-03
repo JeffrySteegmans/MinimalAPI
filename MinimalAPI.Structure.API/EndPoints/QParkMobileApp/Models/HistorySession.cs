@@ -1,12 +1,12 @@
 ﻿namespace MinimalAPI.Structure.API.EndPoints.QParkMobileApp.Models;
 
-public class HistorySession
+public record HistorySession
 {
-    public Guid SessionId { get; set; }
+    public Guid SessionId { get; init; }
 
-    public DateTime StartDate { get; set; }
+    public DateTime StartDate { get; init; }
 
-    public DateTime? EndDate { get; set; }
+    public DateTime? EndDate { get; init; }
 
-    public string AccessDeviceValue { get; set; } = string.Empty;
+    public string AccessDeviceValue { get; init; } = string.Empty;
 }
