@@ -1,7 +1,7 @@
-﻿using MinimalAPI.Structure.API.APIs.Requests;
+﻿using MinimalAPI.Structure.API.EndPoints.QParkMobileApp.Requests;
 using MinimalAPI.Structure.SessionService.Models;
 
-namespace MinimalAPI.Structure.API.APIs.Extensions;
+namespace MinimalAPI.Structure.API.EndPoints.QParkMobileApp.Extensions;
 
 internal static class StartSessionRequestExtensions
 {

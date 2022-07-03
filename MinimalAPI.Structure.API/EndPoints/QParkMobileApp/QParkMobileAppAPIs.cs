@@ -1,10 +1,10 @@
-﻿using MinimalAPI.Structure.API.APIs.Extensions;
-using MinimalAPI.Structure.API.APIs.Models;
-using MinimalAPI.Structure.API.APIs.Requests;
+﻿using MinimalAPI.Structure.API.EndPoints.QParkMobileApp.Extensions;
+using MinimalAPI.Structure.API.EndPoints.QParkMobileApp.Models;
+using MinimalAPI.Structure.API.EndPoints.QParkMobileApp.Requests;
 using MinimalAPI.Structure.SessionService;
 using MinimalAPI.Structure.SessionService.Models;
 
-namespace MinimalAPI.Structure.API.APIs;
+namespace MinimalAPI.Structure.API.EndPoints.QParkMobileApp;
 
 internal class QParkMobileAppAPIs
 {
@@ -14,7 +14,7 @@ internal class QParkMobileAppAPIs
     {
         ArgumentNullException.ThrowIfNull(app);
 
-        app.MapGet($"{BASEPATH}/Hello", (HttpContext context, [FromQuery]string? name) => new { message = $"Hello {name ?? "world"}!" });
+        app.MapGet($"{BASEPATH}/Hello", (HttpContext context, [FromQuery] string? name) => new { message = $"Hello {name ?? "world"}!" });
         app.MapPost($"{BASEPATH}/StartSession", StartSession);
         app.MapPost($"{BASEPATH}/StopSession/{{sessionId}}", StopSession);
     }

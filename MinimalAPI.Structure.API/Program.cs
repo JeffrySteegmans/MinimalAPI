@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection.Extensions;
-using MinimalAPI.Structure.API.APIs;
+using MinimalAPI.Structure.API.EndPoints.QParkMobileApp;
+using MinimalAPI.Structure.API.EndPoints.Sessions;
 using MinimalAPI.Structure.SessionService;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -11,7 +12,7 @@ var app = builder.Build();
 var qParkMobileAppAPIs = new QParkMobileAppAPIs();
 qParkMobileAppAPIs.Initialize(app);
 
-var sessionAPIs = new SessionAPIs();
+var sessionAPIs = new SessionsAPIs();
 sessionAPIs.Initialize(app);
 
 app.Run();

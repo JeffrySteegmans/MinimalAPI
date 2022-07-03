@@ -1,4 +1,4 @@
-﻿namespace MinimalAPI.Structure.API.APIs.Requests;
+﻿namespace MinimalAPI.Structure.API.EndPoints.QParkMobileApp.Requests;
 
 public class StartSessionRequest
 {

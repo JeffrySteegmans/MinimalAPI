@@ -1,7 +1,7 @@
-﻿using MinimalAPI.Structure.API.APIs.Models;
+﻿using MinimalAPI.Structure.API.EndPoints.QParkMobileApp.Models;
 using MinimalAPI.Structure.SessionService.DTOs;
 
-namespace MinimalAPI.Structure.API.APIs.Extensions;
+namespace MinimalAPI.Structure.API.EndPoints.QParkMobileApp.Extensions;
 
 internal static class HistorySessionDTOExtensions
 {
