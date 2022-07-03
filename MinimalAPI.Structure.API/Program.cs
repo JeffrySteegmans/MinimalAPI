@@ -1,10 +1,10 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.Extensions.DependencyInjection.Extensions;
 using MinimalAPI.Structure.API.APIs;
 using MinimalAPI.Structure.SessionService;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddSingleton<ISessionService, SessionService>();
+builder.Services.TryAddSingleton<ISessionService, SessionService>();
 
 var app = builder.Build();
 
