@@ -8,13 +8,15 @@ namespace MinimalAPI.Structure.API.APIs;
 
 internal class QParkMobileAppAPIs
 {
+    private const string BASEPATH = "/mobile";
+
     internal void Initialize(WebApplication app)
     {
         ArgumentNullException.ThrowIfNull(app);
 
-        app.MapGet("/Hello", (HttpContext context, [FromQuery]string? name) => new { message = $"Hello {name ?? "world"}!" });
-        app.MapPost("/StartSession", StartSession);
-        app.MapPost("/StopSession/{sessionId}", StopSession);
+        app.MapGet($"{BASEPATH}/Hello", (HttpContext context, [FromQuery]string? name) => new { message = $"Hello {name ?? "world"}!" });
+        app.MapPost($"{BASEPATH}/StartSession", StartSession);
+        app.MapPost($"{BASEPATH}/StopSession/{{sessionId}}", StopSession);
     }
 
     private async Task<ActiveSession> StartSession(HttpContext context, ISessionService sessionService, StartSessionRequest request)

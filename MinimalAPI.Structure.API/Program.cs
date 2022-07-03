@@ -11,4 +11,7 @@ var app = builder.Build();
 var qParkMobileAppAPIs = new QParkMobileAppAPIs();
 qParkMobileAppAPIs.Initialize(app);
 
+var sessionAPIs = new SessionAPIs();
+sessionAPIs.Initialize(app);
+
 app.Run();
