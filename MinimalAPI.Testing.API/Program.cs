@@ -17,4 +17,4 @@ sessionAPIs.Initialize(app);
 
 app.Run();
 
-public partial class Program { }
+public partial class WebApi { }

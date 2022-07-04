@@ -5,7 +5,7 @@ using MinimalAPI.Testing.SessionService;
 
 namespace MinimalAPI.Testing.API.Tests.Fixtures;
 
-public class ApiFixture : WebApplicationFactory<Program>
+public class ApiFixture : WebApplicationFactory<WebApi>
 {
     protected override IHost CreateHost(IHostBuilder builder)
     {
