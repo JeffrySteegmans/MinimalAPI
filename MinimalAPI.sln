@@ -13,13 +13,19 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MinimalAPI.Structure.API", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MinimalAPI.Structure.SessionService", "MinimalAPI.Structure.SessionService\MinimalAPI.Structure.SessionService.csproj", "{12DE78C3-738F-4C2D-BC10-33FDF4AFCF16}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "03 - Testing", "03 - Testing", "{10A213FD-4E38-4121-9BA3-383135B87AB7}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "04 - Testing", "04 - Testing", "{10A213FD-4E38-4121-9BA3-383135B87AB7}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MinimalAPI.Testing.API", "MinimalAPI.Testing.API\MinimalAPI.Testing.API.csproj", "{76A4E513-80E2-4EF7-A2B3-C5ADC7AD0105}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MinimalAPI.Testing.SessionService", "MinimalAPI.Testing.SessionService\MinimalAPI.Testing.SessionService.csproj", "{39AEF857-3699-45EB-B996-1591467AB277}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MinimalAPI.Testing.API.Tests", "MinimalAPI.Testing.API.Tests\MinimalAPI.Testing.API.Tests.csproj", "{E804C441-332F-446C-9CF8-6BB23F3B3B2E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MinimalAPI.Testing.API.Tests", "MinimalAPI.Testing.API.Tests\MinimalAPI.Testing.API.Tests.csproj", "{E804C441-332F-446C-9CF8-6BB23F3B3B2E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "03 - Swagger", "03 - Swagger", "{7E0120B7-69ED-41EB-B260-4112149C4C58}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MinimalAPI.Swagger.API", "MinimalAPI.Swagger.API\MinimalAPI.Swagger.API.csproj", "{1A06B5EA-2FB9-4637-889C-2DCFFDF9B537}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MinimalAPI.Swagger.SessionService", "MinimalAPI.Swagger.SessionService\MinimalAPI.Swagger.SessionService.csproj", "{C9E510CE-EFFB-4897-AE55-1C3F479CED74}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +57,14 @@ Global
 		{E804C441-332F-446C-9CF8-6BB23F3B3B2E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E804C441-332F-446C-9CF8-6BB23F3B3B2E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E804C441-332F-446C-9CF8-6BB23F3B3B2E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1A06B5EA-2FB9-4637-889C-2DCFFDF9B537}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1A06B5EA-2FB9-4637-889C-2DCFFDF9B537}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1A06B5EA-2FB9-4637-889C-2DCFFDF9B537}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1A06B5EA-2FB9-4637-889C-2DCFFDF9B537}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C9E510CE-EFFB-4897-AE55-1C3F479CED74}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C9E510CE-EFFB-4897-AE55-1C3F479CED74}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C9E510CE-EFFB-4897-AE55-1C3F479CED74}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C9E510CE-EFFB-4897-AE55-1C3F479CED74}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -62,6 +76,8 @@ Global
 		{76A4E513-80E2-4EF7-A2B3-C5ADC7AD0105} = {10A213FD-4E38-4121-9BA3-383135B87AB7}
 		{39AEF857-3699-45EB-B996-1591467AB277} = {10A213FD-4E38-4121-9BA3-383135B87AB7}
 		{E804C441-332F-446C-9CF8-6BB23F3B3B2E} = {10A213FD-4E38-4121-9BA3-383135B87AB7}
+		{1A06B5EA-2FB9-4637-889C-2DCFFDF9B537} = {7E0120B7-69ED-41EB-B260-4112149C4C58}
+		{C9E510CE-EFFB-4897-AE55-1C3F479CED74} = {7E0120B7-69ED-41EB-B260-4112149C4C58}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {60F14DF8-CB16-4280-B8FC-40512DB0545A}
