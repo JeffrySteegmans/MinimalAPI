@@ -9,4 +9,8 @@ public class HistorySession
     public DateTime? EndDate { get; set; }
 
     public string AccessDeviceValue { get; set; } = string.Empty;
+
+    public string SessionType { get; set; } = "RSTP";
+
+    public Guid CustomerId { get; set; } = Guid.NewGuid();
 }

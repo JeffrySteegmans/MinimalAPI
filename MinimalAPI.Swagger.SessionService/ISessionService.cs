@@ -8,4 +8,6 @@ public interface ISessionService
     Task<ActiveSession> StartSession(StartSessionRequest model);
 
     Task<HistorySession> StopSession(StopSessionRequest model);
+
+    Task<List<HistorySession>> GetSessionsForCustomerByType(GetSessionsForCustomerByTypeRequest model);
 }

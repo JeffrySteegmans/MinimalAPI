@@ -19,6 +19,7 @@ internal class QParkMobileAppEndPoints
         app.MapPost($"{BASEPATH}/Bar", Bar);
         app.MapPost($"{BASEPATH}/StartSession", StartSession);
         app.MapPost($"{BASEPATH}/StopSession/{{sessionId}}", StopSession);
+        app.MapGet($"{BASEPATH}/customer/{{customerId}}/Session/{{sessionType}}", GetSessionsForCustomer);
     }
 
     [Authorize]
@@ -40,5 +41,13 @@ internal class QParkMobileAppEndPoints
         var historySession = await sessionService.StopSession(request);
 
         return historySession.ToWebApiModel();
+    }
+
+    private async Task<List<HistorySession>> GetSessionsForCustomer(HttpContext context, ISessionService sessionService, Guid customerId, string type)
+    {
+        var request = new SessionServiceRequests.GetSessionsForCustomerByTypeRequest(customerId, type);
+        var historySessions = await sessionService.GetSessionsForCustomerByType(request);
+
+        return historySessions.ToWebApiModels();
     }
 }

@@ -5,6 +5,13 @@ namespace MinimalAPI.Swagger.API.EndPoints.QParkMobileApp.Extensions;
 
 internal static class HistorySessionExtensions
 {
+    internal static List<HistorySession> ToWebApiModels(this List<SessionServiceModels.HistorySession> dtos)
+    {
+        return dtos?
+            .Select(ToWebApiModel)
+            .ToList() ?? new List<HistorySession>();
+    }
+
     internal static HistorySession ToWebApiModel(this SessionServiceModels.HistorySession dto)
     {
         if (dto == null)
@@ -18,6 +25,8 @@ internal static class HistorySessionExtensions
             AccessDeviceValue = dto.AccessDeviceValue,
             EndDate = dto.EndDate,
             StartDate = dto.StartDate,
+            SessionType = dto.SessionType,
+            CustomerId = dto.CustomerId,
         };
     }
 }
