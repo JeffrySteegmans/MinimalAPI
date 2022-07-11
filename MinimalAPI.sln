@@ -23,9 +23,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MinimalAPI.Testing.API.Test
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "03 - Swagger", "03 - Swagger", "{7E0120B7-69ED-41EB-B260-4112149C4C58}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MinimalAPI.Swagger.API", "MinimalAPI.Swagger.API\MinimalAPI.Swagger.API.csproj", "{1A06B5EA-2FB9-4637-889C-2DCFFDF9B537}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MinimalAPI.Swagger.API", "MinimalAPI.Swagger.API\MinimalAPI.Swagger.API.csproj", "{1A06B5EA-2FB9-4637-889C-2DCFFDF9B537}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MinimalAPI.Swagger.SessionService", "MinimalAPI.Swagger.SessionService\MinimalAPI.Swagger.SessionService.csproj", "{C9E510CE-EFFB-4897-AE55-1C3F479CED74}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MinimalAPI.Swagger.SessionService", "MinimalAPI.Swagger.SessionService\MinimalAPI.Swagger.SessionService.csproj", "{C9E510CE-EFFB-4897-AE55-1C3F479CED74}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

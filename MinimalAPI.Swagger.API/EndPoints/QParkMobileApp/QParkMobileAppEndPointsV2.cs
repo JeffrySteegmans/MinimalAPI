@@ -1,52 +1,52 @@
-﻿using Asp.Versioning.Conventions;
-using MinimalAPI.Swagger.SessionService;
+﻿using MinimalAPI.Swagger.SessionService;
 using MinimalAPI.Swagger.API.EndPoints.QParkMobileApp.Extensions;
 using MinimalAPI.Swagger.API.EndPoints.QParkMobileApp.Models;
 using SessionServiceRequests = MinimalAPI.Swagger.SessionService.Requests;
+using Asp.Versioning.Conventions;
 
 namespace MinimalAPI.Swagger.API.EndPoints.QParkMobileApp;
 
-internal class QParkMobileAppEndPoints
+internal class QParkMobileAppEndPointsV2
 {
     private const string VERSIONSETNAME = "Q-Park mobile app";
-    private const string BASEPATH = "/mobile";
-    private const double VERSION = 1.0;
+    private const string BASEPATH = $"/mobile";
+    private const double VERSION = 2.0;
 
     internal void RegisterEndpoints(WebApplication app)
     {
         ArgumentNullException.ThrowIfNull(app);
 
-        var qparkMobileAppVersionSet = app
+        var qparkMobileAppV2VersionSet = app
             .NewApiVersionSet(VERSIONSETNAME)
             .Build();
 
-        app.MapGet($"{BASEPATH}/Hello", (HttpContext context, [FromQuery] string? name) => new { message = $"Hello {name ?? "world"}!" })
+        app.MapGet($"{BASEPATH}/v{{version:apiVersion}}/Hello", (HttpContext context, [FromQuery] string? name) => new { message = $"Hello {name ?? "world"}!" })
             .Produces(404)
-            .WithApiVersionSet(qparkMobileAppVersionSet)
+            .WithApiVersionSet(qparkMobileAppV2VersionSet)
             .HasApiVersion(VERSION);
-        app.MapGet($"{BASEPATH}/Foo", [Authorize] (HttpContext context) => new { message = $"Hello foo!" })
+        app.MapGet($"{BASEPATH}/v{{version:apiVersion}}/Foo", [Authorize](HttpContext context) => new { message = $"Hello foo!" })
             .Produces(404)
-            .WithApiVersionSet(qparkMobileAppVersionSet)
+            .WithApiVersionSet(qparkMobileAppV2VersionSet)
             .HasApiVersion(VERSION);
-        app.MapPost($"{BASEPATH}/Bar", Bar)
+        app.MapPost($"{BASEPATH}/v{{version:apiVersion}}/Bar", Bar)
             .Produces<string>(200)
             .Produces(404)
-            .WithApiVersionSet(qparkMobileAppVersionSet)
+            .WithApiVersionSet(qparkMobileAppV2VersionSet)
             .HasApiVersion(VERSION);
-        app.MapPost($"{BASEPATH}/StartSession", StartSession)
+        app.MapPost($"{BASEPATH}/v{{version:apiVersion}}/StartSession", StartSession)
             .Produces<ActiveSession>(200)
             .Produces(404)
-            .WithApiVersionSet(qparkMobileAppVersionSet)
+            .WithApiVersionSet(qparkMobileAppV2VersionSet)
             .HasApiVersion(VERSION);
-        app.MapPost($"{BASEPATH}/StopSession/{{sessionId}}", StopSession)
+        app.MapPost($"{BASEPATH}/v{{version:apiVersion}}/StopSession/{{sessionId}}", StopSession)
             .Produces<HistorySession>(200)
             .Produces(404)
-            .WithApiVersionSet(qparkMobileAppVersionSet)
+            .WithApiVersionSet(qparkMobileAppV2VersionSet)
             .HasApiVersion(VERSION);
-        app.MapGet($"{BASEPATH}/customer/{{customerId}}/Session/{{sessionType}}", GetSessionsForCustomer)
+        app.MapGet($"{BASEPATH}/v{{version:apiVersion}}/customer/{{customerId}}/Session/{{sessionType}}", GetSessionsForCustomer)
             .Produces<HistorySession>(200)
             .Produces(404)
-            .WithApiVersionSet(qparkMobileAppVersionSet)
+            .WithApiVersionSet(qparkMobileAppV2VersionSet)
             .HasApiVersion(VERSION);
     }
 
