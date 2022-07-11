@@ -23,7 +23,7 @@ public class SessionService : ISessionService
 
         if (historySession == null)
         {
-            return Task.FromResult<HistorySession>(null);
+            return Task.FromResult<HistorySession>(null!);
         }
 
         historySession.EndDate = DateTime.UtcNow;
