@@ -9,6 +9,12 @@ builder.Services.TryAddSingleton<ISessionService, SessionService>();
 
 var app = builder.Build();
 
+var qParkMobileAppAPIs = new QParkMobileAppEndPoints();
+qParkMobileAppAPIs.Initialize(app);
+
+var sessionAPIs = new SessionsEndPoints();
+sessionAPIs.Initialize(app);
+
 app.MapSessionEndPoints();
 app.MapQParkMobileAppEndPoints();
 
