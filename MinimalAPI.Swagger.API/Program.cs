@@ -43,6 +43,8 @@ qParkMobileAppEndPointsV2.RegisterEndpoints(app);
 var sessionAPIs = new SessionsEndPoints();
 sessionAPIs.RegisterEndpoints(app);
 
+app.MapSessionEndPoints();
+
 app
     .UseAuthorization()
     .UseSwagger()
